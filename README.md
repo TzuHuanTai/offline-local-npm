@@ -1,5 +1,8 @@
 # offline-local-npm
-For some people/companies who wanna copy hole npm service into LAN
+
+For some people or companies who wanna copy the hole npm service into LAN
+
+node.js版本請用10.X.X以上的！原本用8.X的有時跑到一半會卡住！
 
 ## 1.安裝verdaccio ##
 先在連網環境安裝好verdaccio
