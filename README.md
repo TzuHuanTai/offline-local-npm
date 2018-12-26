@@ -4,14 +4,15 @@ For some people or companies who wanna copy the hole npm service into LAN
 
 node.js版本請用10.X.X以上的！原本用8.X的有時跑到一半會卡住！
 
+</br>
+
 ## 1.安裝verdaccio ##
 先在連網環境安裝好verdaccio
 
 
 > sudo npm install -g verdaccio
 
-
-
+</br>
 
 ## 2. 啟用verdaccio ##
 安裝完的verdaccio資料路徑：
@@ -32,16 +33,14 @@ verdaccio config路徑：
 
 > /usr/lib/node_modules/verdaccio/bin/verdaccio
 
-
-
-
+</br>
 
 ## 3. 註冊adduser ##
 > npm adduser --registry http://127.0.0.1:4873
 
 如果自己用不想註冊權限控管，就把「config.yaml」裡packages的「publish」權限改成「$all」
 
-
+</br>
 
 ## 4. 透過Nginx proxy代理 ##
 設定nginx的proxy
@@ -73,7 +72,7 @@ verdaccio config路徑：
 
 > tar xvzf leaflet-1.3.4.tgz
 
-
+</br>
 
 ## 6. 發佈開源套件到verdaccio ##
 進入解壓縮的資料夾找到package.json檔。
@@ -96,7 +95,7 @@ verdaccio會將套件重新壓縮成.tgz放入套件名稱的資料夾`/home/{us
 
 這邊重點是在我們publish的同時，要讓verdaccio上去https://registry.npmjs.org抓此開源套件版本歷史的json格式詳細資料！
 
-
+</br>
 
 ## 7. 修正最新版本號 ##
 `/home/{user}/.local/share/verdaccio/storage/{packageName}/package.json`中，json格式詳細資料也會記載這次publish的版本號「0.0.0」同時變為最新版本，所以
@@ -112,7 +111,7 @@ verdaccio要讓package可以運作此套件必須在「.sinopia-db.json」清單
 
 如果滿足以上兩個條件，從其他server直接複製貼上過來也可以
 
-
+</br>
 
 ## 8. 把流程1~7寫成shell script大量匯入 ##
 先到 [all-the-package-names](https://github.com/nice-registry/all-the-package-names) 下載names.json，這是人家整理好npm上所有packages的名稱json檔。
@@ -138,7 +137,7 @@ verdaccio要讓package可以運作此套件必須在「.sinopia-db.json」清單
 
 - 把成功的到紀錄log檔中，然後再迴圈跑一次流程
 
-
+</br>
 
 ## 常用指令 ##
 找出linux下global node_modules擺放位置
@@ -157,7 +156,7 @@ verdaccio要讓package可以運作此套件必須在「.sinopia-db.json」清單
 
 > kill {pid_number}
 
-
+</br>
 
 ## 參考資料 ##
 1. [[問題] 在 shell/shell script 下做斜線取代](https://www.ptt.cc/bbs/Perl/M.1308547412.A.39A.html)
